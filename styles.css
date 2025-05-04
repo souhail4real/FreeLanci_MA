@@ -126,3 +126,243 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px); /* Slightly lift the button on hover */
 }
+
+/* ====================================== */
+/* Advanced Filter Styles - UPDATED */
+/* ====================================== */
+
+/* Advanced Filters Container */
+#advanced-filters {
+    transition: all 0.3s ease;
+    z-index: 50; /* Increased z-index for proper layering */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(236, 240, 241, 0.8);
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Toggle filters button - ENHANCED */
+#toggle-filters {
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(39, 174, 96, 0.2); /* Using var(--secondary) with opacity */
+    font-weight: 500;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+#toggle-filters:hover {
+    background-color: rgba(39, 174, 96, 0.3); /* Using var(--secondary) with opacity */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon animations - NEW */
+#toggle-filters i {
+    transition: all 0.3s ease;
+}
+
+#toggle-filters i.fa-filter {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+#toggle-filters i.fa-chevron-down,
+#toggle-filters i.fa-chevron-up {
+    margin-left: 8px;
+    font-size: 0.75rem;
+}
+
+#toggle-filters:hover i.fa-filter {
+    transform: rotate(-10deg);
+}
+
+#toggle-filters:hover i.fa-chevron-down {
+    transform: translateY(2px);
+}
+
+#toggle-filters:hover i.fa-chevron-up {
+    transform: translateY(-2px);
+}
+
+/* Hero section specific toggle button positioning - NEW */
+.hero-gradient #toggle-filters {
+    margin-top: 12px;
+}
+
+/* Filter tags styling */
+.filter-tag {
+    display: inline-flex;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.filter-tag span {
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.filter-tag:hover {
+    transform: translateY(-2px);
+}
+
+.filter-tag:hover span {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.filter-tag-remove {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.4rem;
+    opacity: 0.7;
+}
+
+.filter-tag-remove:hover {
+    color: var(--accent); /* Using your accent color variable */
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Form inputs styling - ENHANCED */
+#advanced-filters input, 
+#advanced-filters select {
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    opacity: 1;
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+#advanced-filters input:focus, 
+#advanced-filters select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+    outline: none;
+}
+
+/* Price range inputs */
+#price-min, #price-max {
+    width: 80px;
+    flex: 1;
+}
+
+/* Filter group styling - NEW */
+.filter-group {
+    margin-bottom: 1rem;
+}
+
+/* Button styling */
+#apply-filters {
+    background-color: var(--secondary);
+    color: white;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(39, 174, 96, 0.2);
+    cursor: pointer;
+}
+
+#apply-filters:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+    background-color: #25a055; /* Slightly darker on hover */
+}
+
+#clear-filters {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    cursor: pointer;
+    margin-right: 0.75rem;
+}
+
+#clear-filters:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+/* Labels styling */
+#advanced-filters label {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Active filters container */
+#active-filter-tags {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Filter group with special styling for price range */
+.filter-group .flex.items-center {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mobile responsiveness for filters - NEW */
+@media (max-width: 768px) {
+    #advanced-filters {
+        padding: 1rem;
+    }
+    
+    .mt-4.flex.justify-end {
+        flex-direction: column-reverse;
+    }
+    
+    #apply-filters, #clear-filters {
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-right: 0;
+    }
+    
+    #clear-filters {
+        margin-top: 0.5rem;
+    }
+    
+    #toggle-filters {
+        padding: 6px 12px;
+    }
+}
+
+
